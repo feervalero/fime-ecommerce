@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "store": "cd store && npm start",
-    "start": "concurrently \"nodemon server.js\" \"npm run store\""
+    "start": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run store\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "concurrently": "^6.0.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.2",
     "morgan": "^1.10.0"
