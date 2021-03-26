@@ -28,5 +28,8 @@ app.use(morgan("tiny"));
 
 app.use('/api',router);
 
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static('store/build'));
+}
 
 app.listen(PORT,console.log("listening in port "+PORT));
