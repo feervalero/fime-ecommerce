@@ -3,9 +3,6 @@ const Product = require("../models/product");
 const router = express.Router();
 /*body starts*/
 
-router.get('*', (req, res) => {                       
-    res.sendFile(path.resolve(__dirname, 'store/build/index.html'));                               
-});
 
 router.get("/",(req,res)=>{
     Product.find({})
