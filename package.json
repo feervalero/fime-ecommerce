@@ -9,7 +9,7 @@
     "install-store":"cd store && npm install",
     "heroku-postbuild":"npm run install-store && npm run build",
     "store": "cd store && npm start",
-    "start": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run store\""
+    "start": "concurrently -n 'server,client' -c 'red,green' \"node server.js\" \"npm run store\""
   },
   "repository": {
     "type": "git",

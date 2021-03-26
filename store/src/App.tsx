@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/config" component={Config}/>
         <Route path="/" component={Home}/>
       </Switch>
     </Router>
