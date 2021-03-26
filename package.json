@@ -1,0 +1,32 @@
+{
+  "name": "fime-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "store": "cd store && npm start",
+    "start": "concurrently \"nodemon server.js\" \"npm run store\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/feervalero/fime-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/feervalero/fime-ecommerce/issues"
+  },
+  "homepage": "https://github.com/feervalero/fime-ecommerce#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
