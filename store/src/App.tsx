@@ -14,8 +14,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/config" component={Config}/>
-        <Route path="/" component={Home}/>
+        <Route path="/store/config" component={Config}/>
+        <Route path="/store" component={Home}/>
       </Switch>
     </Router>
   );
