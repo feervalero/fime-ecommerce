@@ -22,5 +22,9 @@ router.post("/save",(req,res)=>{
     });
 })
 
+router.get('*', (req, res) => {                       
+    res.sendFile(path.resolve(__dirname, 'store/build', 'index.html'));                               
+});
+
 /*body ends*/
 module.exports = router;
