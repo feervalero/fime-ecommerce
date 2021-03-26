@@ -1,13 +1,25 @@
 import React from 'react'
 import logo from './logo.svg';
 import axios from "axios";
+
+
 class Config extends React.Component {
+    
     
     state ={
         sku:"",
         name:"",
-        price:""
+        price:"",
+        products: Array<string>()
 
+    }
+
+    componentDidMount= ()=>{
+        this.getProducts();
+    }
+
+    getProducts =() =>{
+        axios.get("/api").then((data)=>this.setState({products:data.data}))
     }
 
     changeHandler= ({target}:any)=>{
@@ -37,10 +49,22 @@ class Config extends React.Component {
         .catch(error=>console.log(error));
     }
 
+    displayProductList =(products:Array<any>)=>{
+        if(!products.length) return null;
+        return products.map((p)=>(
+            <li>{p.name}</li>
+        ))
+    }
+
     render(){
         console.log(this.state)
-
         return (
+            <>
+            <div>
+                <ul>
+                    {this.displayProductList(this.state.products)}
+                </ul>
+            </div>
             <div className="App">
                 <form onSubmit={this.submit}>
                     <input type="text" placeholder="Enter sku" name="sku" value={this.state.sku} onChange={this.changeHandler}/><br></br>
@@ -49,6 +73,7 @@ class Config extends React.Component {
                     <button>SAVE</button>
                 </form>
             </div>
+            </>
         )
     }
 }
